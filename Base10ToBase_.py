@@ -11,4 +11,5 @@ def Base10ToBase_(num, base):
 
     return convertedNum[::-1]
 
-print(Base10ToBase_(123, 2)) #num, base
+if __name__ == "__main__":
+    print(Base10ToBase_(123, 2)) #num, base

@@ -10,4 +10,5 @@ def Base_ToBase10(num, originalBase):
 
     return convertedNum
 
-print(Base_ToBase10("1111011", 2)) #"num", originalBase
+if __name__ == "__main__":
+    print(Base_ToBase10("7B", 16)) #"num", originalBase
