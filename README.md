@@ -2,7 +2,7 @@
 
 ![Python](https://img.shields.io/badge/python-3.x-blue?style=for-the-badge&logo=python)
 
-A lightweight and bidirectional Python utility designed to convert standard numbers (Base 10) into custom base representations ranging from Base 2 to Base 36, as well as converting them back to Base 10.
+A modular Python utility designed to convert numbers between arbitrary numeral bases (from Base 2 up to Base 36) using Base 10 as an intermediate bridge.
 
 ## 📋 Summary
 - [Technologies](#-technologies)
@@ -10,30 +10,36 @@ A lightweight and bidirectional Python utility designed to convert standard numb
 - [Project Architecture](#-project-architecture)
 - [What I Learned](#-what-i-learned)
 - [Future Improvements](#-future-improvements)
+- [How to Run](#-how-to-run)
 
 ---
 
 ## 🛠 Technologies
-- **Python 3.x**: Core logic, positional notation arithmetic, and string manipulation.
+- **Python 3.x**: Core logic and base conversion calculations.
 
 ## ✨ Features
-- **Bidirectional Base Conversion:** Seamlessly convert Base 10 integers to any target base (2 to 36) and parse custom base strings back into Base 10.
-- **Alphanumeric Encoding & Decoding:** Maps digits above 9 to uppercase letters (`A-Z`) for standard representation (e.g., Binary, Hexadecimal, Base36).
-- **Boundary Validation:** Validates input bases and returns informative messages if the provided base falls outside the allowed range (`2 <= base <= 36`).
-- **Edge Case Handling:** Gracefully processes edge cases, such as converting `0`.
+- **Base to Decimal Conversion:** Translates string representations of numbers from any base (2–36) into Base 10.
+- **Decimal to Any Base Conversion:** Converts Base 10 integer values into any base targeted (2–36).
+- **Universal Base Converter:** Direct conversions from Base X to Base Y by using Base 10 intermediary processing.
+- **Alphanumeric Mapping:** Utilizes `0-9` and `A-Z` characters to support higher base representations.
 
 ## 📂 Project Architecture
-The project is split into two specialized scripts:
-* `Base10ToBase_.py`: Handles conversion from decimal numbers (Base 10) to a specified target base (Base 2 to 36).
-* `Base_ToBase10.py`: Handles conversion from a custom base string (Base 2 to 36) back into a decimal integer (Base 10).
+The project is structured into individual functions separating each stage of conversion:
+* `Base_ToBase10.py`: Script containing logic to convert an input string from a specified base into a decimal integer.
+* `Base10ToBase_.py`: Script containing logic to convert a decimal integer into a string of a target base.
+* `BaseXToBaseY.py`: Main module importing both functions to perform complete base-to-base transitions.
 
 ## 📚 What I Learned
-* **Positional Notation Algorithms:** Utilizing modulo (`%`) and floor division (`//`) for encoding to custom bases, and exponentiation with string indexing ($\sum \text{digit} \times \text{base}^i$) for decoding back to decimal.
-* **String Reversal & Inversion:** Leveraging Python's extended slicing (`[::-1]`) to order remainders correctly and process strings from least to most significant digit.
-* **Alphanumeric Lookup Mapping:** Mapping digits directly through index lookup strings (`chars.index()`) to seamlessly translate characters to numeric values.
+* **Positional Systems:** Utilizing positional weight indices and polynomial arithmetic to compute decimal totals.
+* **Modulo Arithmetic:** Applying integer division (`//`) and modulo (`%`) loops to extract digits.
+* **Modular Integration:** Importing specialized functions across python modules to create a unified function pipeline.
 
 ## 🔮 Future Improvements
-- [ ] Add support for direct Base-A to Base-B conversion (without intermediate Base 10 conversion).
-- [ ] Add support for negative numbers.
-- [ ] Support for floating-point / fractional conversions.
-- [ ] Create an interactive CLI interface for custom user prompts.
+- [ ] Add input validation to ensure number string characters match the original base domain.
+- [ ] Support floating-point / fractional base conversions.
+- [ ] Support negative numbers.
+- [ ] Build a Command-Line Interface (CLI) for interactive terminal user input.
+
+## 🚀 How to Run
+**Execute conversion via main module:**
+   BaseXToBaseY.py
