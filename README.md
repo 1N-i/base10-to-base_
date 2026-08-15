@@ -35,9 +35,10 @@ The project is structured into individual functions separating each stage of con
 * **Modular Integration:** Importing specialized functions across python modules to create a unified function pipeline.
 
 ## 🔮 Future Improvements
-- [ ] Add input validation to ensure number string characters match the original base domain.
-- [ ] Support floating-point / fractional base conversions.
-- [ ] Support negative numbers.
+- [X] Implement reverse conversion (Base-N to Base 10).
+- [X] Add support for direct Base-A to Base-B conversion
+- [ ] Add input validation to ensure number / string characters match the original base domain.
+- [ ] Support floating-point and negative numbers.
 - [ ] Build a Command-Line Interface (CLI) for interactive terminal user input.
 
 ## 🚀 How to Run
